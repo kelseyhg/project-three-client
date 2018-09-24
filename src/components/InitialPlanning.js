@@ -45,7 +45,7 @@ class Adding extends Component {
   }
 
 	handleSubmit = (e) => {
-
+		e.preventDefault();
 		let token = localStorage.getItem('mernToken') || ''
 		console.log('hello =====>', this.state, this.props.user);
 		axios.post(SERVER_URL + '/budget/update',  {

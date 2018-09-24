@@ -31,7 +31,7 @@ class SpendingItems extends Component {
 	}
 
 	handleSubmit = (e) => {
-
+		e.preventDefault();
 		this.setState({
 			[e.target.name]: e.target.value,
 		})
