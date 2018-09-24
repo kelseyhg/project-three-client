@@ -10,7 +10,7 @@ class AllMoneyList extends Component {
 	}
 
 	handleDelete = (item) => {
-		e.preventDefault();
+		item.preventDefault();
   console.log('trying to delete', item)
   let token = localStorage.getItem('mernToken') || ''
   axios.post(SERVER_URL + '/money/delete',  {

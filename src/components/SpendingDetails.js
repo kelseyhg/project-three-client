@@ -6,7 +6,7 @@ export default class SpendingDetails extends Component {
 
 
   handleDelete = (item) => {
-    e.preventDefault();
+    item.preventDefault();
   console.log('trying to delete', item)
   let token = localStorage.getItem('mernToken') || ''
 
