@@ -16,7 +16,6 @@ class AllMoneyList extends Component {
 			body: this.state,
 		}).then(res => {
 				const allMoney = res.data;
-				console.log('All Money in database ',allMoney);
 				this.setState({ allMoney });				
 			})
 	}
