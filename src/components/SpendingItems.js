@@ -83,7 +83,7 @@ class SpendingItems extends Component {
 						<input className="budget-input" type="date" name="date" value={this.state.date} onChange={this.handleChange} />
 
 						<label for="description">description:</label>
-						<input className="budget-input" type="text" name="Description" value={this.state.description} onChange={this.handleChange} />
+						<input className="budget-input" type="text" name="description" value={this.state.description} onChange={this.handleChange} />
 
 
 						<button className="submit-button" type="submit">Add</button> <br/><br/>

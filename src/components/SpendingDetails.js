@@ -23,53 +23,6 @@ export default class SpendingDetails extends Component {
 }
 
   render() {
-		var month_list = ['January', 'February', 'March', 'April', 'May', 'June','July', 'August', 'September', 'October', 'November', 'December'];
-
-		const month = moment().format("MMMM");
-		var months = [];
-
-		switch(month){
-  			case 'January':
-     			  months = month_list.slice(0,1);
-      			break;
-  			case 'February':
-      			months = month_list.slice(0,2);
-      			break;
-  			case 'March':
-  				  months = month_list.slice(0,3);
-      			break;
-        case 'April':
-            months = month_list.slice(0,4);
-            break;
-        case 'May':
-            months = month_list.slice(0,5);
-            break;
-        case 'June':
-            months = month_list.slice(0,6);
-            break;
-        case 'July':
-            months = month_list.slice(0,7);
-            break;
-        case 'August':
-            months = month_list.slice(0,8);
-            break;
-        case 'September':
-            months = month_list.slice(0,9);
-            break;
-        case 'October':
-            months = month_list.slice(0,10);
-            break;
-        case 'November':
-            months = month_list.slice(0,11);
-            break;
-        case 'December':
-            months = month_list.slice(0,12);
-            break;
-        default:
-            break;
-}
-
-
 
     let spending = this.props.spendingFunction();
 
@@ -184,9 +137,9 @@ export default class SpendingDetails extends Component {
             <div>
 
               <h3>{item.data.key}</h3>
-            <table className="item-table"><thead><td className="item-spacing">Item</td><td className="item-spacing">$</td><td className="item-spacing">Date</td><td className="item-spacing">ID</td></thead>
+            <table className="item-table"><thead><td className="item-spacing">Item</td><td className="item-spacing">$</td><td className="item-spacing">Date</td></thead>
             <tbody>
-              {item.data.data.map(key => <tr ><td className="item-spacing">{key.description}</td><td className="item-spacing">{key.amount}</td><td className="item-spacing">{moment(key.date).calendar()}</td><td className="item-spacing">{key.id}</td>
+              {item.data.data.map(key => <tr ><td className="item-spacing">{key.description}</td><td className="item-spacing">{key.amount}</td><td className="item-spacing">{moment(key.date).calendar()}</td>
               <td>  <input type='submit' className="submit-button" onClick={() => this.handleDelete(key.id)} value="Delete"/></td></tr>
             )}
               </tbody>
@@ -204,9 +157,8 @@ export default class SpendingDetails extends Component {
             <div>
 
               <h3>{item.data.key}</h3>
-              <table className="item-table"><thead><td className="item-spacing">Item</td><td className="item-spacing">$</td><td className="item-spacing">Date</td><td className="item-spacing">ID</td></thead>
-              <tbody>
-              {item.data.data.map(key => <tr ><td className="item-spacing">{key.description}</td><td className="item-spacing">{key.amount}</td><td className="item-spacing">{moment(key.date).calendar()}</td><td className="item-spacing">{key.id}</td>
+              <table className="item-table"><thead><td className="item-spacing">Item</td><td className="item-spacing">$</td><td className="item-spacing">Date</td></thead><tbody>
+              {item.data.data.map(key => <tr ><td className="item-spacing">{key.description}</td><td className="item-spacing">{key.amount}</td><td className="item-spacing">{moment(key.date).calendar()}</td>
               <td>  <input type='submit' className="submit-button" onClick={() => this.handleDelete(key.id)} value="Delete"/></td></tr>
               )}
               </tbody>
@@ -223,9 +175,9 @@ export default class SpendingDetails extends Component {
             <div>
 
               <h3>{item.data.key}</h3>
-              <table className="item-table"><thead><td className="item-spacing">Item</td><td className="item-spacing">$</td><td className="item-spacing">Date</td><td className="item-spacing">ID</td></thead>
+              <table className="item-table"><thead><td className="item-spacing">Item</td><td className="item-spacing">$</td><td className="item-spacing">Date</td></thead>
               <tbody>
-              {item.data.data.map(key => <tr ><td className="item-spacing">{key.description}</td><td className="item-spacing">{key.amount}</td><td className="item-spacing">{moment(key.date).calendar()}</td><td className="item-spacing">{key.id}</td>
+              {item.data.data.map(key => <tr ><td className="item-spacing">{key.description}</td><td className="item-spacing">{key.amount}</td><td className="item-spacing">{moment(key.date).calendar()}</td>
               <td>  <input type='submit' className="submit-button" onClick={() => this.handleDelete(key.id)} value="Delete"/></td></tr>
               )}
               </tbody>
@@ -242,9 +194,9 @@ export default class SpendingDetails extends Component {
             <div>
 
               <h3>{item.data.key}</h3>
-              <table className="item-table"><thead><td className="item-spacing">Item</td><td className="item-spacing">$</td><td className="item-spacing">Date</td><td className="item-spacing">ID</td></thead>
+              <table className="item-table"><thead><td className="item-spacing">Item</td><td className="item-spacing">$</td><td className="item-spacing">Date</td></thead>
               <tbody>
-              {item.data.data.map(key => <tr ><td className="item-spacing">{key.description}</td><td className="item-spacing">{key.amount}</td><td className="item-spacing">{moment(key.date).calendar()}</td><td className="item-spacing">{key.id}</td>
+              {item.data.data.map(key => <tr ><td className="item-spacing">{key.description}</td><td className="item-spacing">{key.amount}</td><td className="item-spacing">{moment(key.date).calendar()}</td>
               <td>  <input type='submit' className="submit-button" onClick={() => this.handleDelete(key.id)} value="Delete"/></td></tr>
               )}
               </tbody>
@@ -262,9 +214,9 @@ export default class SpendingDetails extends Component {
             <div>
 
               <h3>{item.data.key}</h3>
-              <table className="item-table"><thead><td className="item-spacing">Item</td><td className="item-spacing">$</td><td className="item-spacing">Date</td><td className="item-spacing">ID</td></thead>
+              <table className="item-table"><thead><td className="item-spacing">Item</td><td className="item-spacing">$</td><td className="item-spacing">Date</td></thead>
               <tbody>
-              {item.data.data.map(key => <tr ><td className="item-spacing">{key.description}</td><td className="item-spacing">{key.amount}</td><td className="item-spacing">{moment(key.date).calendar()}</td><td className="item-spacing">{key.id}</td>
+              {item.data.data.map(key => <tr ><td className="item-spacing">{key.description}</td><td className="item-spacing">{key.amount}</td><td className="item-spacing">{moment(key.date).calendar()}</td>
               <td>  <input type='submit' className="submit-button" onClick={() => this.handleDelete(key.id)} value="Delete"/></td></tr>
               )}
               </tbody>
@@ -283,9 +235,9 @@ export default class SpendingDetails extends Component {
 
 
               <h3>{item.data.key}</h3>
-              <table className="item-table"><thead><td className="item-spacing">Item</td><td className="item-spacing">$</td><td className="item-spacing">Date</td><td className="item-spacing">ID</td></thead>
+              <table className="item-table"><thead><td className="item-spacing">Item</td><td className="item-spacing">$</td><td className="item-spacing">Date</td></thead>
               <tbody>
-              {item.data.data.map(key => <tr ><td className="item-spacing">{key.description}</td><td className="item-spacing">{key.amount}</td><td className="item-spacing">{moment(key.date).calendar()}</td><td className="item-spacing">{key.id}</td>
+              {item.data.data.map(key => <tr ><td className="item-spacing">{key.description}</td><td className="item-spacing">{key.amount}</td><td className="item-spacing">{moment(key.date).calendar()}</td>
               <td>  <input type='submit' className="submit-button" onClick={() => this.handleDelete(key.id)} value="Delete"/></td></tr>
               )}
               </tbody>
@@ -303,9 +255,9 @@ export default class SpendingDetails extends Component {
             <div>
 
               <h3>{item.data.key}</h3>
-              <table className="item-table"><thead><td className="item-spacing">Item</td><td className="item-spacing">$</td><td className="item-spacing">Date</td><td className="item-spacing">ID</td></thead>
+              <table className="item-table"><thead><td className="item-spacing">Item</td><td className="item-spacing">$</td><td className="item-spacing">Date</td></thead>
               <tbody>
-              {item.data.data.map(key => <tr ><td className="item-spacing">{key.description}</td><td className="item-spacing">{key.amount}</td><td className="item-spacing">{moment(key.date).calendar()}</td><td className="item-spacing">{key.id}</td>
+              {item.data.data.map(key => <tr ><td className="item-spacing">{key.description}</td><td className="item-spacing">{key.amount}</td><td className="item-spacing">{moment(key.date).calendar()}</td>
               <td>  <input type='submit' className="submit-button" onClick={() => this.handleDelete(key.id)} value="Delete"/></td></tr>
               )}
               </tbody>
@@ -323,9 +275,9 @@ export default class SpendingDetails extends Component {
             <div>
 
               <h3>{item.data.key}</h3>
-              <table className="item-table"><thead><td className="item-spacing">Item</td><td className="item-spacing">$</td><td className="item-spacing">Date</td><td className="item-spacing">ID</td></thead>
+              <table className="item-table"><thead><td className="item-spacing">Item</td><td className="item-spacing">$</td><td className="item-spacing">Date</td></thead>
               <tbody>
-              {item.data.data.map(key => <tr ><td className="item-spacing">{key.description}</td><td className="item-spacing">{key.amount}</td><td className="item-spacing">{moment(key.date).calendar()}</td><td className="item-spacing">{key.id}</td>
+              {item.data.data.map(key => <tr ><td className="item-spacing">{key.description}</td><td className="item-spacing">{key.amount}</td><td className="item-spacing">{moment(key.date).calendar()}</td>
               <td>  <input type='submit' className="submit-button" onClick={() => this.handleDelete(key.id)} value="Delete"/></td></tr>
               )}
               </tbody>
@@ -343,10 +295,10 @@ export default class SpendingDetails extends Component {
             <div>
 
               <h3>{item.data.key}</h3>
-              <table className="item-table"><thead><td className="item-spacing">Item</td><td className="item-spacing">$</td><td className="item-spacing">Date</td><td className="item-spacing">ID</td></thead>
+              <table className="item-table"><thead><td className="item-spacing">Item</td><td className="item-spacing">$</td><td className="item-spacing">Date</td></thead>
               <tbody>
-              {item.data.data.map(key => <tr ><td className="item-spacing">{key.description}</td><td className="item-spacing">{key.amount}</td><td className="item-spacing">{moment(key.date).calendar()}</td><td className="item-spacing">{key.id}</td>
-              <td><  <input type='submit' className="submit-button" onClick={() => this.handleDelete(key.id)} value="Delete"/></td></tr>
+              {item.data.data.map(key => <tr ><td className="item-spacing">{key.description}</td><td className="item-spacing">{key.amount}</td><td className="item-spacing">{moment(key.date).calendar()}</td>
+              <td><input type='submit' className="submit-button" onClick={() => this.handleDelete(key.id)} value="Delete"/></td></tr>
               )}
               </tbody>
             </table>
