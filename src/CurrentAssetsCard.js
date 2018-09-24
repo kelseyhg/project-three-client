@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import moment from 'moment';
+import SERVER_URL from './constants/server';
 
 class AllMoneyList extends Component {
 	state = {
@@ -11,7 +12,7 @@ class AllMoneyList extends Component {
 
 		let token = localStorage.getItem('mernToken') || ''
 		console.log(token)
-		axios.post('http://localhost:3000/money/all',  {
+		axios.post(SERVER_URL + '/money/all',  {
 			headers: { 'Authorization': `Bearer ${token}` },
 			body: this.state,
 
