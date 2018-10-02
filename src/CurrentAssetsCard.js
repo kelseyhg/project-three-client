@@ -8,18 +8,16 @@ class AllMoneyList extends Component {
 		allMoney: []
 	}
 
-	// componentDidMount() {
-	// 	axios.get('http://localhost:3000/money/all')
-	// 		.then(res => {
-	// 			const allMoney = res.data;
-	// 			this.setState({ allMoney });
-	// 		})
-	// }
-
 	componentDidMount() {
-		axios.post(SERVER_URL + '/money/all/post', this.props.user)
-			.then(res => {
-				console.log("ASSETS DATA", res.data);
+
+		let token = localStorage.getItem('mernToken') || ''
+		console.log(token)
+		axios.post(SERVER_URL + '/money/all',  {
+			headers: { 'Authorization': `Bearer ${token}` },
+			body: this.state,
+
+		})
+		.then(res => {
 				const allMoney = res.data;
 				this.setState({ allMoney });
 			})
@@ -31,6 +29,7 @@ class AllMoneyList extends Component {
 		 var totalIncome = 0;
 
 		 this.state.allMoney.forEach(i =>{
+		 	if (moment(i.date).format('MMMM') === moment().format('MMMM'))
       		 { income.push(i.amount) }
       		})
 

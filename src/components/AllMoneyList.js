@@ -8,15 +8,34 @@ class AllMoneyList extends Component {
 	state = {
 		allMoney: [],
 	}
+
+	handleDelete = (item) => {
+		item.preventDefault();
+  console.log('trying to delete', item)
+  let token = localStorage.getItem('mernToken') || ''
+  axios.post(SERVER_URL + '/money/delete',  {
+    headers: { 'Authorization': `Bearer ${token}` },
+    body: item
+  })
+  .then(item => {
+  	console.log('result', item);
+  })
+  .catch(err => {
+		console.log(item)
+  	console.log('error');
+  });
+  }
+
 	componentDidMount() {
 		let token = localStorage.getItem('mernToken') || ''
 		console.log(token)
-		axios.post('http://localhost:3000/money/all',  {
+		axios.post(SERVER_URL + '/money/all',  {
 			headers: { 'Authorization': `Bearer ${token}` },
 			body: this.state,
 		}).then(res => {
 				const allMoney = res.data;
-				this.setState({ allMoney });				
+				console.log('All Money in database ',allMoney);
+				this.setState({ allMoney });
 			})
 	}
 	render() {
@@ -25,7 +44,7 @@ class AllMoneyList extends Component {
 			May:{total:0,value:[]},April:{total:0,value:[]},March:{total:0,value:[]},February:{total:0,value:[]},January:{total:0,value:[]}
 		};
 		const monthJSX = [];
-		
+
 		this.state.allMoney.map( money => {
 			if (moment(money.date).format('MMMM') === 'January') {
 				moneyList.January.total += money.amount;
@@ -69,91 +88,94 @@ class AllMoneyList extends Component {
 			return(
 				<p>
 						Money from: {money.description}. Amount: {money.amount}. Date: {moment(money.date).calendar()}
-						<button>Edit</button><button>Delete</button>
+						<input type='submit' className="submit-button" onClick={() => this.handleDelete(money._id)} value="Delete"/>
 						</p>
 						)})
 		monthJSX[1] = moneyList.February.value.map(money => {
 			return(
 				<p>
 						Money from: {money.description}. Amount: {money.amount}. Date: {moment(money.date).calendar()}
-						<button>Edit</button><button>Delete</button>
+						<input type='submit' className="submit-button" onClick={() => this.handleDelete(money._id)} value="Delete"/>
 						</p>
 						)})
 		monthJSX[2] = moneyList.March.value.map(money => {
 			return(
 				<p>
 						Money from: {money.description}. Amount: {money.amount}. Date: {moment(money.date).calendar()}
-						<button>Edit</button><button>Delete</button>
+						<input type='submit' className="submit-button" onClick={() => this.handleDelete(money._id)} value="Delete"/>
 						</p>
 						)})
 		monthJSX[3] = moneyList.April.value.map(money => {
 			return(
 				<p>
 						Money from: {money.description}. Amount: {money.amount}. Date: {moment(money.date).calendar()}
-						<button>Edit</button><button>Delete</button>
+						<input type='submit' className="submit-button" onClick={() => this.handleDelete(money._id)} value="Delete"/>
 						</p>
 						)})
 		monthJSX[4] = moneyList.May.value.map(money => {
 			return(
 				<p>
 						Money from: {money.description}. Amount: {money.amount}. Date: {moment(money.date).calendar()}
-						<button>Edit</button><button>Delete</button>
+						<input type='submit' className="submit-button" onClick={() => this.handleDelete(money._id)} value="Delete"/>
 						</p>
 						)})
 		monthJSX[5] = moneyList.June.value.map(money => {
 			return(
 				<p>
 						Money from: {money.description}. Amount: {money.amount}. Date: {moment(money.date).calendar()}
-						<button>Edit</button><button>Delete</button>
+						<input type='submit' className="submit-button" onClick={() => this.handleDelete(money._id)} value="Delete"/>
 						</p>
 						)})
 		monthJSX[6] = moneyList.July.value.map(money => {
 			return(
 				<p>
 						Money from: {money.description}. Amount: {money.amount}. Date: {moment(money.date).calendar()}
-						<button>Edit</button><button>Delete</button>
+						<input type='submit' className="submit-button" onClick={() => this.handleDelete(money._id)} value="Delete"/>
 						</p>
 						)})
 		monthJSX[7] = moneyList.August.value.map(money => {
 			return(
 				<p>
 						Money from: {money.description}. Amount: {money.amount}. Date: {moment(money.date).calendar()}
-						<button>Edit</button><button>Delete</button>
+						<input type='submit' className="submit-button" onClick={() => this.handleDelete(money._id)} value="Delete"/>
 						</p>
 						)})
 		monthJSX[8] = moneyList.September.value.map(money => {
 			return(
 				<p>
 						Money from: {money.description}. Amount: {money.amount}. Date: {moment(money.date).calendar()}
-						<button>Edit</button><button>Delete</button>
+						<input type='submit' className="submit-button" onClick={() => this.handleDelete(money._id)} value="Delete"/>
 						</p>
 						)})
 		monthJSX[9] = moneyList.October.value.map(money => {
 			return(
 				<p>
 						Money from: {money.description}. Amount: {money.amount}. Date: {moment(money.date).calendar()}
-						<button>Edit</button><button>Delete</button>
+						<input type='submit' className="submit-button" onClick={() => this.handleDelete(money._id)} value="Delete"/>
 						</p>
 						)})
 		monthJSX[10] = moneyList.November.value.map(money => {
 			return(
 				<p>
 						Money from: {money.description}. Amount: {money.amount}. Date: {moment(money.date).calendar()}
-						<button>Edit</button><button>Delete</button>
+						<input type='submit' className="submit-button" onClick={() => this.handleDelete(money._id)} value="Delete"/>
 						</p>
 						)})
 		monthJSX[11] = moneyList.December.value.map(money => {
 			return(
 				<p>
 						Money from: {money.description}. Amount: {money.amount}. Date: {moment(money.date).calendar()}
-						<button>Edit</button><button>Delete</button>
+
+						<input type='submit' className="submit-button" onClick={() => this.handleDelete(money._id)} value="Delete"/>
+
 						</p>
 						)})
 
 		return(
 			<div>
 				<div>
-				<Adding user={this.props.user} />
+
+				<Adding user={this.props.user} title={this.props.title}/>
 			</div>
 			<div>
 				<h2>September Adding</h2>
@@ -193,6 +215,7 @@ class AllMoneyList extends Component {
 				<h3>Total: ${moneyList.January.total}</h3>
 				<hr/>
 				<br/><br/><br/><br/>
+
 			</div>
 
    </div>

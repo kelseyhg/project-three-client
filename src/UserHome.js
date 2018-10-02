@@ -33,7 +33,7 @@ class UserHome extends Component {
       } 
 
     return(
-    	<div>
+    	<div className="profile">
 	       <h2> {moment().format('MMMM')} Overview</h2>
 			   <CurrentAssetsCard user={this.props.user} />
 	       <div className="budgetWrapper">
@@ -48,11 +48,6 @@ class UserHome extends Component {
 		       		budget={this.props.budget}/>
 
 		    </div>
-
-		    <div className="formWrapper">
-		       	   <SpendingItems user={this.props.user} />
-		       	   <Adding user={this.props.user} />
-			</div>
 			 
 		</div>
 
