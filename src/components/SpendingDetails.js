@@ -131,6 +131,26 @@ export default class SpendingDetails extends Component {
 
 		return(
 			<div>
+       <h1>October</h1>
+        {spendingItems10(spending).map(item => {
+          console.log('item in October: ', item);
+          return (
+            <div>
+
+              <h3>{item.data.key}</h3>
+            <table className="item-table"><thead><td className="item-spacing">Item</td><td className="item-spacing">$</td><td className="item-spacing">Date</td></thead>
+            <tbody>
+              {item.data.data.map(key => <tr ><td className="item-spacing">{key.description}</td><td className="item-spacing">{key.amount}</td><td className="item-spacing">{moment(key.date).calendar()}</td>
+              <td>  <input type='submit' className="submit-button" onClick={() => this.handleDelete(key.id)} value="Delete"/></td></tr>
+            )}
+              </tbody>
+            </table>
+
+            </div>
+            )
+        })}
+
+        <hr/>
         <h1>September</h1>
         {spendingItems9(spending).map(item => {
           console.log('item in September: ', item);
