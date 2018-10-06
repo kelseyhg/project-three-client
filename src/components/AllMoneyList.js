@@ -178,6 +178,10 @@ class AllMoneyList extends Component {
 				<Adding user={this.props.user} title={this.props.title}/>
 			</div>
 			<div>
+				<h2>October Adding</h2>
+				{monthJSX[9]}
+				<h3>Total: ${moneyList.October.total}</h3>
+				<hr/>
 				<h2>September Adding</h2>
 				{monthJSX[8]}
 				<h3>Total: ${moneyList.September.total}</h3>

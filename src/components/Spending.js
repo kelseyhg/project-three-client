@@ -36,14 +36,14 @@ class Spending extends Component {
 
 
 	render() {
-		var total_spending_sep= 0;
-		var total_spending_aug= 0;
-		const entertainment_sep = [];
-		const entertainment_aug = [];
-	//	const entertainment_month = [];
-		var entertainmentSep_total = 0;
-		var entertainmentAug_total = 0;
-	//	for (let i = 0; i< month; i++ ){
+	// 	var total_spending_sep= 0;
+	// 	var total_spending_aug= 0;
+	// 	const entertainment_sep = [];
+	// 	const entertainment_aug = [];
+	// //	const entertainment_month = [];
+	// 	var entertainmentSep_total = 0;
+	// 	var entertainmentAug_total = 0;
+	// //	for (let i = 0; i< month; i++ ){
 
 		console.log("want to see array spending ",this.state.spending);
 

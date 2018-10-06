@@ -24,6 +24,7 @@ export default class SpendingDetails extends Component {
 
 
   render() {
+    
 
     let spending = this.props.spendingFunction();
       const spendingItems12 = (spending) => {
